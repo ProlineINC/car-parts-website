@@ -190,7 +190,7 @@
     .ticker-track span i { margin-right: 8px; }
     @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-    /* ======= HERO (ENHANCED WITH CINEMATIC OVERLAY & ZOOM) ======= */
+    /* ======= HERO ======= */
     .hero {
       min-height: calc(100vh - 100px);
       position: relative;
@@ -425,7 +425,7 @@
     .section-title .accent { color: var(--red); }
     .section-sub { color: var(--muted); font-size: 1rem; max-width: 520px; line-height: 1.7; }
 
-    /* ======= NEW SECTION: HIGH QUALITY NEW & USED PARTS ======= */
+    /* ======= QUALITY PARTS SECTION ======= */
     .quality-parts-section {
       margin-top: 60px;
       margin-bottom: 40px;
@@ -456,9 +456,7 @@
       background: linear-gradient(90deg, transparent, rgba(225,6,0,0.08), transparent);
       transition: left 0.6s ease;
     }
-    .quality-highlight-card:hover::before {
-      left: 100%;
-    }
+    .quality-highlight-card:hover::before { left: 100%; }
     .quality-highlight-card:hover {
       transform: translateY(-8px);
       border-color: var(--red);
@@ -491,12 +489,6 @@
       color: #aaa;
       line-height: 1.6;
       font-size: 0.9rem;
-    }
-    @media (max-width: 900px) {
-      .quality-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
     }
 
     /* ======= ENQUIRE SECTION ======= */
@@ -630,7 +622,7 @@
     }
     .contact-card p { font-size: .82rem; color: var(--muted); line-height: 1.5; }
 
-    /* ======= INFO SECTION (WAREHOUSE IMAGE) ======= */
+    /* ======= INFO SECTION ======= */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -670,9 +662,7 @@
       filter: brightness(0.82);
       display: block;
     }
-    .warehouse-img:hover {
-      transform: scale(1.05);
-    }
+    .warehouse-img:hover { transform: scale(1.05); }
     .floating-badge {
       position: absolute;
       bottom: 28px; left: 28px;
@@ -699,7 +689,7 @@
     .trust-item i { color: var(--red); font-size: 1rem; width: 20px; }
     .trust-item span { font-size: .9rem; color: #ccc; }
 
-    /* ======= PARTS GRID (PREMIUM EFFECTS) ======= */
+    /* ======= PARTS GRID ======= */
     .parts-showcase {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -745,21 +735,10 @@
       white-space: nowrap;
       transition: .3s;
     }
-    .part-card:hover img {
-      transform: scale(1.12);
-      filter: brightness(1);
-    }
-    .part-card:hover::before {
-      background: linear-gradient(to top, rgba(225,6,0,0.45), rgba(0,0,0,0.15));
-    }
-    .part-card:hover {
-      transform: translateY(-10px);
-      border-color: #E10600;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(225,6,0,0.25);
-    }
-    .part-card:hover .part-card-label {
-      letter-spacing: 3px;
-    }
+    .part-card:hover img { transform: scale(1.12); filter: brightness(1); }
+    .part-card:hover::before { background: linear-gradient(to top, rgba(225,6,0,0.45), rgba(0,0,0,0.15)); }
+    .part-card:hover { transform: translateY(-10px); border-color: #E10600; box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(225,6,0,0.25); }
+    .part-card:hover .part-card-label { letter-spacing: 3px; }
 
     /* ======= GUARANTEE BAND ======= */
     .guarantee-band {
@@ -846,17 +825,32 @@
       margin-bottom: 32px;
     }
     .footer-brand p { font-size: .85rem; color: var(--muted); line-height: 1.7; margin-top: 12px; max-width: 300px; }
+    .footer-contact-info { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #bbb;
+      font-size: .82rem;
+      line-height: 1.5;
+      text-decoration: none;
+      transition: .2s;
+    }
+    .footer-contact-item:hover { color: var(--red2); }
+    .footer-contact-item i { color: var(--red); margin-top: 2px; flex-shrink: 0; font-size: .9rem; }
     .footer-phone {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-top: 22px;
       color: var(--red2);
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 1.3rem;
       font-weight: 700;
       letter-spacing: 1px;
+      text-decoration: none;
+      transition: .2s;
     }
+    .footer-phone:hover { color: #fff; }
     .footer-col-title {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: .85rem;
@@ -930,18 +924,16 @@
 
 <header class="header" id="header">
   <div class="nav-container">
-    <div class="logo-text">
-    <img src="/logo.png" alt="Proline Logo" style="height:120px;">
-</div>
+    <div class="logo-text">PROLINE</div>
     <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
+      <li><a href="#">About Us</a></li>
       <li><a href="#">Search Parts</a></li>
       <li><a href="#">Junkyards</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
-    <a href="tel:18776571262" class="nav-cta"><i class="fas fa-phone-alt"></i> 1(877) 657-1262</a>
+    <a href="tel:+18776571262" class="nav-cta"><i class="fas fa-phone-alt"></i> +1(877) 657-1262</a>
   </div>
 </header>
 
@@ -993,7 +985,6 @@
   </div>
 </div>
 
-<!-- ========== NEW SECTION: HIGH QUALITY NEW & USED PARTS (ADDED ONLY THIS) ========== -->
 <section class="section quality-parts-section">
   <div class="container">
     <div class="reveal" style="text-align:center;">
@@ -1023,22 +1014,78 @@
     </div>
   </div>
 </section>
-<!-- ========== END OF NEW SECTION ========== -->
 
 <section class="section" id="enquire">
   <div class="container">
     <div class="reveal" style="text-align:center; margin-bottom:60px;"><div class="section-label" style="justify-content:center;">Get Instant Quote</div><h2 class="section-title">FIND YOUR <span class="accent">PART NOW</span></h2><p class="section-sub" style="margin:0 auto; text-align:center;">Search our network of 18,000+ recyclers instantly. No part found? Our specialists call you within minutes.</p></div>
-    <div class="enquire-grid reveal"><div class="form-card"><form id="enquiryForm"><div class="form-row"><div><label>Vehicle Year</label><select id="yearSelect"><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option><option>2009</option><option>2008</option><option>2007</option><option>2006</option><option>2005</option><option>2004</option><option>2003</option><option>2002</option><option>2001</option><option>2000</option><option>1999</option><option>1998</option><option>1997</option><option>1996</option><option>1995</option><option>1990</option><option>1985</option><option>1980</option></select></div><div><label>Make</label><select id="makeSelect"><option>Acura</option><option>Audi</option><option>BMW</option><option>Buick</option><option>Cadillac</option><option>Chevrolet</option><option>Chrysler</option><option>Dodge</option><option>Ford</option><option>GMC</option><option>Honda</option><option>Hyundai</option><option>Infiniti</option><option>Jeep</option><option>Kia</option><option>Land Rover</option><option>Lexus</option><option>Mazda</option><option>Mercedes</option><option>Mitsubishi</option><option>Nissan</option><option>Porsche</option><option>Ram</option><option>Subaru</option><option>Tesla</option><option>Toyota</option><option>Volkswagen</option><option>Volvo</option></select></div></div><label>Model</label><input type="text" id="modelInput" placeholder="e.g. Camry, F-150, Civic..."><label>Part Needed</label><input type="text" id="partInput" placeholder="e.g. Engine, Transmission, Hood..."><label>Your Email</label><input type="email" id="emailInput" required placeholder="you@example.com"><button type="submit" class="form-submit"><i class="fas fa-search" style="margin-right:10px;"></i> SEARCH 18,000+ RECYCLERS</button><p style="text-align:center; margin-top:16px; font-size:.8rem; color:var(--muted);">No results? Call us: <strong style="color:var(--red2);">1(877) 657-1262</strong></p></form></div><div class="contact-cards"><div class="contact-card" id="chatBtn"><div class="contact-card-icon"><i class="fas fa-comments"></i></div><div><h4>Live Chat Now</h4><p>Connect instantly with a warehouse specialist who quotes from live inventory in real time.</p></div><i class="fas fa-arrow-right" style="margin-left:auto; color:var(--muted); flex-shrink:0;"></i></div><div class="contact-card" onclick="window.location.href='tel:18776571262'"><div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div><div><h4>1(877) 657-1262</h4><p>Talk directly to a mechanic. Get the best price guaranteed, any time of day.</p></div><i class="fas fa-arrow-right" style="margin-left:auto; color:var(--muted); flex-shrink:0;"></i></div><div class="contact-card"><div class="contact-card-icon"><i class="fas fa-calendar-alt"></i></div><div><h4>Schedule a Callback</h4><p>Fill the form and our team calls you back with the best price in the market.</p></div><i class="fas fa-arrow-right" style="margin-left:auto; color:var(--muted); flex-shrink:0;"></i></div><div class="contact-card"><div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Junkyards Near Me</h4><p>Locate the nearest salvage yard from our network of 78+ locations across the USA.</p></div><i class="fas fa-arrow-right" style="margin-left:auto; color:var(--muted); flex-shrink:0;"></i></div></div></div>
+    <div class="enquire-grid reveal"><div class="form-card"><form id="enquiryForm"><div class="form-row"><div><label>Vehicle Year</label><select id="yearSelect"><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option><option>2009</option><option>2008</option><option>2007</option><option>2006</option><option>2005</option><option>2004</option><option>2003</option><option>2002</option><option>2001</option><option>2000</option><option>1999</option><option>1998</option><option>1997</option><option>1996</option><option>1995</option><option>1990</option><option>1985</option><option>1980</option></select></div><div><label>Make</label><select id="makeSelect"><option>Acura</option><option>Audi</option><option>BMW</option><option>Buick</option><option>Cadillac</option><option>Chevrolet</option><option>Chrysler</option><option>Dodge</option><option>Ford</option><option>GMC</option><option>Honda</option><option>Hyundai</option><option>Infiniti</option><option>Jeep</option><option>Kia</option><option>Land Rover</option><option>Lexus</option><option>Mazda</option><option>Mercedes</option><option>Mitsubishi</option><option>Nissan</option><option>Porsche</option><option>Ram</option><option>Subaru</option><option>Tesla</option><option>Toyota</option><option>Volkswagen</option><option>Volvo</option></select></div></div><label>Model</label><input type="text" id="modelInput" placeholder="e.g. Camry, F-150, Civic..."><label>Part Needed</label><input type="text" id="partInput" placeholder="e.g. Engine, Transmission, Hood..."><label>Your Email</label><input type="email" id="emailInput" required placeholder="you@example.com"><button type="submit" class="form-submit"><i class="fas fa-search" style="margin-right:10px;"></i> SEARCH 18,000+ RECYCLERS</button><p style="text-align:center; margin-top:16px; font-size:.8rem; color:var(--muted);">No results? Call us: <strong style="color:var(--red2);">+1(877) 657-1262</strong></p></form></div><div class="contact-cards"><div class="contact-card" id="chatBtn"><div class="contact-card-icon"><i class="fas fa-comments"></i></div><div><h4>Live Chat Now</h4><p>Connect instantly with a warehouse specialist who quotes from live inventory in real time.</p></div><i class="fas fa-arrow-right" style="margin-left:auto; color:var(--muted); flex-shrink:0;"></i></div><div class="contact-card" onclick="window.location.href='tel:+18776571262'"><div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div><div><h4>+1(877) 657-1262</h4><p>Talk directly to a mechanic. Get the best price guaranteed, any time of day.</p></div><i class="fas fa-arrow-right" style="margin-left:auto; color:var(--muted); flex-shrink:0;"></i></div><div class="contact-card" onclick="alert('📞 Please call us directly at +1(877) 657-1262 to schedule a callback!')"><div class="contact-card-icon"><i class="fas fa-calendar-alt"></i></div><div><h4>Schedule a Callback</h4><p>Fill the form and our team calls you back with the best price in the market.</p></div><i class="fas fa-arrow-right" style="margin-left:auto; color:var(--muted); flex-shrink:0;"></i></div><div class="contact-card" onclick="alert('📍 Find nearby junkyards using our locator tool or call us for assistance.')"><div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Junkyards Near Me</h4><p>Locate the nearest salvage yard from our network of 78+ locations across the USA.</p></div><i class="fas fa-arrow-right" style="margin-left:auto; color:var(--muted); flex-shrink:0;"></i></div></div></div>
   </div>
 </section>
 
 <div class="guarantee-band"><div class="guarantee-inner"><div class="guarantee-item reveal"><div class="guarantee-icon"><i class="fas fa-medal"></i></div><h4>OEM Certified</h4><p>Original manufacturer parts. Guaranteed fit and function for your exact vehicle.</p></div><div class="guarantee-item reveal reveal-delay-1"><div class="guarantee-icon"><i class="fas fa-truck-fast"></i></div><h4>Free USA Shipping</h4><p>All parts ship free to any address in the continental United States.</p></div><div class="guarantee-item reveal reveal-delay-2"><div class="guarantee-icon"><i class="fas fa-shield-alt"></i></div><h4>30-Day Warranty</h4><p>Full conditional return warranty. No questions asked if the part doesn't fit.</p></div><div class="guarantee-item reveal reveal-delay-3"><div class="guarantee-icon"><i class="fas fa-headset"></i></div><h4>Live Support</h4><p>Real mechanics available around the clock for quotes, advice, and order support.</p></div></div></div>
 
-<section class="section"><div class="container"><div class="info-grid"><div class="reveal"><div class="info-img-wrap"><img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?q=80&w=2070&auto=format&fit=crop" class="warehouse-img" alt="warehouse"><div class="floating-badge"><div class="floating-badge-num">18K+</div><div class="floating-badge-text">Auto Recyclers<br>in Our Network</div></div></div></div><div class="reveal reveal-delay-1"><div class="section-label">Why Choose Us</div><h2 class="section-title">#1 Online Car <span class="accent">Parts</span> Locator</h2><p class="section-sub">PROLINE CAR PARTS INC has helped millions of Americans locate hard-to-find OEM parts fast. We connect you directly to 18,000+ verified recyclers nationwide.</p><div class="trust-list"><div class="trust-item"><i class="fas fa-check-circle"></i><span>Certified recycled OEM parts for cars, trucks & SUVs</span></div><div class="trust-item"><i class="fas fa-check-circle"></i><span>Live inventory updated in real time — what you see is what we have</span></div><div class="trust-item"><i class="fas fa-check-circle"></i><span>Mechanic-verified quality check before every shipment</span></div><div class="trust-item"><i class="fas fa-check-circle"></i><span>100% satisfaction guarantee — or your money back</span></div><div class="trust-item"><i class="fas fa-check-circle"></i><span>Serving millions of customers across the USA since 2005</span></div></div><button class="btn-primary" style="margin-top:8px;"><i class="fas fa-warehouse"></i> Explore Full Inventory</button></div></div></div></section>
+<section class="section"><div class="container"><div class="info-grid"><div class="reveal"><div class="info-img-wrap"><img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?q=80&w=2070&auto=format&fit=crop" class="warehouse-img" alt="car parts"><div class="floating-badge"><div class="floating-badge-num">18K+</div><div class="floating-badge-text">Auto Recyclers<br>in Our Network</div></div></div></div><div class="reveal reveal-delay-1"><div class="section-label">Why Choose Us</div><h2 class="section-title">#1 Online Car <span class="accent">Parts</span> Locator</h2><p class="section-sub">PROLINE CAR PARTS INC has helped millions of Americans locate hard-to-find OEM parts fast. We connect you directly to 18,000+ verified recyclers nationwide.</p><div class="trust-list"><div class="trust-item"><i class="fas fa-check-circle"></i><span>Certified recycled OEM parts for cars, trucks & SUVs</span></div><div class="trust-item"><i class="fas fa-check-circle"></i><span>Live inventory updated in real time — what you see is what we have</span></div><div class="trust-item"><i class="fas fa-check-circle"></i><span>Mechanic-verified quality check before every shipment</span></div><div class="trust-item"><i class="fas fa-check-circle"></i><span>100% satisfaction guarantee — or your money back</span></div><div class="trust-item"><i class="fas fa-check-circle"></i><span>Serving millions of customers across the USA since 2005</span></div></div><button class="btn-primary" style="margin-top:8px;" onclick="alert('Explore our full inventory of OEM parts. Call us for immediate assistance!')"><i class="fas fa-warehouse"></i> Explore Full Inventory</button></div></div></div></section>
 
-<section class="section" style="padding-top:20px;"><div class="container"><div class="reveal" style="text-align:center; margin-bottom:56px;"><div class="section-label" style="justify-content:center;">Inventory</div><h2 class="section-title">WHAT WE <span class="accent">SELL</span></h2></div><div class="parts-showcase"><div class="part-card reveal"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop" alt="Engine"><div class="part-card-label">Engine</div></div><div class="part-card reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=2071&auto=format&fit=crop" alt="Transmission"><div class="part-card-label">Transmission</div></div><div class="part-card reveal reveal-delay-2"><img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=2070&auto=format&fit=crop" alt="Head Lights"><div class="part-card-label">Head Lights</div></div><div class="part-card reveal reveal-delay-3"><img src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=2070&auto=format&fit=crop" alt="Radiator"><div class="part-card-label">Radiator</div></div><div class="part-card reveal"><img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=2070&auto=format&fit=crop" alt="Fender"><div class="part-card-label">Fender</div></div><div class="part-card reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=2070&auto=format&fit=crop" alt="Door Mirror"><div class="part-card-label">Door Mirror</div></div><div class="part-card reveal reveal-delay-2"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=2072&auto=format&fit=crop" alt="Car Door"><div class="part-card-label">Car Door</div></div><div class="part-card reveal reveal-delay-3"><img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=2071&auto=format&fit=crop" alt="Tail Light"><div class="part-card-label">Tail Light</div></div></div><div class="reveal" style="margin-top:48px; background:linear-gradient(100deg,#0e0e0e,#161616); border:1px solid rgba(225,6,0,.3); border-radius:24px; padding:48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px; position:relative; overflow:hidden;"><div style="position:absolute; right:-60px; top:-60px; width:250px; height:250px; background:radial-gradient(circle,rgba(225,6,0,.12),transparent 70%); pointer-events:none;"></div><div><h3 style="font-family:'Barlow Condensed',sans-serif; font-size:1.8rem; font-weight:900; text-transform:uppercase; letter-spacing:1px;">Can't Find Your Part?</h3><p style="color:var(--muted); margin-top:6px; font-size:.9rem;">Our specialists have access to parts not listed online. Call now and get a quote in 60 seconds.</p></div><button class="btn-primary" style="flex-shrink:0;" onclick="window.location.href='tel:18776571262'"><i class="fas fa-phone-alt"></i> 1(877) 657-1262</button></div></div></section>
+<section class="section" style="padding-top:20px;"><div class="container"><div class="reveal" style="text-align:center; margin-bottom:56px;"><div class="section-label" style="justify-content:center;">Inventory</div><h2 class="section-title">WHAT WE <span class="accent">SELL</span></h2></div><div class="parts-showcase"><div class="part-card reveal"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop" alt="Engine"><div class="part-card-label">Engine</div></div><div class="part-card reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=2071&auto=format&fit=crop" alt="Transmission"><div class="part-card-label">Transmission</div></div><div class="part-card reveal reveal-delay-2"><img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=2070&auto=format&fit=crop" alt="Head Lights"><div class="part-card-label">Head Lights</div></div><div class="part-card reveal reveal-delay-3"><img src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=2070&auto=format&fit=crop" alt="Radiator"><div class="part-card-label">Radiator</div></div><div class="part-card reveal"><img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=2070&auto=format&fit=crop" alt="Fender"><div class="part-card-label">Fender</div></div><div class="part-card reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=2070&auto=format&fit=crop" alt="Door Mirror"><div class="part-card-label">Door Mirror</div></div><div class="part-card reveal reveal-delay-2"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=2072&auto=format&fit=crop" alt="Car Door"><div class="part-card-label">Car Door</div></div><div class="part-card reveal reveal-delay-3"><img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=2071&auto=format&fit=crop" alt="Tail Light"><div class="part-card-label">Tail Light</div></div></div><div class="reveal" style="margin-top:48px; background:linear-gradient(100deg,#0e0e0e,#161616); border:1px solid rgba(225,6,0,.3); border-radius:24px; padding:48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px; position:relative; overflow:hidden;"><div style="position:absolute; right:-60px; top:-60px; width:250px; height:250px; background:radial-gradient(circle,rgba(225,6,0,.12),transparent 70%); pointer-events:none;"></div><div><h3 style="font-family:'Barlow Condensed',sans-serif; font-size:1.8rem; font-weight:900; text-transform:uppercase; letter-spacing:1px;">Can't Find Your Part?</h3><p style="color:var(--muted); margin-top:6px; font-size:.9rem;">Our specialists have access to parts not listed online. Call now and get a quote in 60 seconds.</p></div><button class="btn-primary" style="flex-shrink:0;" onclick="window.location.href='tel:+18776571262'"><i class="fas fa-phone-alt"></i> +1(877) 657-1262</button></div></div></section>
 
-<footer class="footer"><div class="footer-top"><div class="footer-brand"><div class="logo-text" style="font-size:1.8rem;">PROLINE</div><p>America's #1 online car parts locator. Connecting you to 18,000+ recyclers and 78+ salvage yards for certified OEM parts at 30% below dealer prices.</p><div class="footer-phone"><i class="fas fa-phone-alt"></i> 1(877) 657-1262</div></div><div><div class="footer-col-title">Company</div><a href="#" class="footer-link">Home</a><a href="#" class="footer-link">About Us</a><a href="#" class="footer-link">FAQs</a><a href="#" class="footer-link">Careers</a></div><div><div class="footer-col-title">Parts</div><a href="#" class="footer-link">Search by Parts</a><a href="#" class="footer-link">Search by Make</a><a href="#" class="footer-link">Part Locator</a><a href="#" class="footer-link">Used OEM Parts</a></div><div><div class="footer-col-title">Services</div><a href="#" class="footer-link">Junkyards Near Me</a><a href="#" class="footer-link">Junkyard Inventory</a><a href="#" class="footer-link">Buy Online</a><a href="#" class="footer-link">Free Shipping</a></div><div><div class="footer-col-title">Legal</div><a href="#" class="footer-link">Terms & Conditions</a><a href="#" class="footer-link">Refund Policy</a><a href="#" class="footer-link">Policies</a><a href="#" class="footer-link">Subscribe</a></div></div><div class="footer-bottom"><p>© 2026 PROLINE CAR PARTS INC — All Rights Reserved</p><div class="payment-row"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fab fa-cc-amex"></i><i class="fab fa-cc-discover"></i><i class="fab fa-paypal"></i></div></div></footer>
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-text" style="font-size:1.8rem;">PROLINE</div>
+      <p>America's #1 online car parts locator. Connecting you to 18,000+ recyclers and 78+ salvage yards for certified OEM parts at 30% below dealer prices.</p>
+      <div class="footer-contact-info">
+        <a href="tel:+18776571262" class="footer-contact-item footer-phone">
+          <i class="fas fa-phone-alt"></i> +1(877) 657-1262
+        </a>
+        <a href="mailto:support@prolinecarparts.com" class="footer-contact-item">
+          <i class="fas fa-envelope"></i> support@prolinecarparts.com
+        </a>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>119-107 Watt Common SW,<br>Edmonton, Alberta, T6X2C6</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <a href="#" class="footer-link">Home</a>
+      <a href="#" class="footer-link">About Us</a>
+      <a href="#" class="footer-link">FAQs</a>
+      <a href="#" class="footer-link">Careers</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Parts</div>
+      <a href="#" class="footer-link">Search by Parts</a>
+      <a href="#" class="footer-link">Search by Make</a>
+      <a href="#" class="footer-link">Part Locator</a>
+      <a href="#" class="footer-link">Used OEM Parts</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <a href="#" class="footer-link">Junkyards Near Me</a>
+      <a href="#" class="footer-link">Junkyard Inventory</a>
+      <a href="#" class="footer-link">Buy Online</a>
+      <a href="#" class="footer-link">Free Shipping</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <a href="#" class="footer-link">Terms & Conditions</a>
+      <a href="#" class="footer-link">Refund Policy</a>
+      <a href="#" class="footer-link">Policies</a>
+      <a href="#" class="footer-link">Subscribe</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 PROLINE CAR PARTS INC — All Rights Reserved</p>
+    <div class="payment-row">
+      <i class="fab fa-cc-visa"></i>
+      <i class="fab fa-cc-mastercard"></i>
+      <i class="fab fa-cc-amex"></i>
+      <i class="fab fa-cc-discover"></i>
+      <i class="fab fa-paypal"></i>
+    </div>
+  </div>
+</footer>
 
 <script>
   const cur = document.getElementById('cursor'), curRing = document.getElementById('cursor-ring');
@@ -1063,7 +1110,7 @@
   const counters = document.querySelectorAll('.stat-number[data-target]'); const cObs = new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){ animateCount(e.target); cObs.unobserve(e.target); } }); }, {threshold:.5}); counters.forEach(c=>cObs.observe(c));
   document.getElementById('enquiryForm').addEventListener('submit', e=>{ e.preventDefault(); const btn = e.target.querySelector('.form-submit'); btn.innerHTML='<i class="fas fa-spinner fa-spin" style="margin-right:10px;"></i> SEARCHING...'; setTimeout(()=>{ btn.innerHTML='<i class="fas fa-check" style="margin-right:10px;"></i> QUOTE SENT! WE\'LL CALL YOU SHORTLY'; btn.style.background='linear-gradient(100deg,#1a7a1a,#0d5c0d)'; }, 1600); });
   document.getElementById('chatBtn').addEventListener('click',()=>alert('💬 Connecting you to a live warehouse specialist...'));
-  document.getElementById('heroCallBtn').addEventListener('click',()=>window.location.href='tel:18776571262');
+  document.getElementById('heroCallBtn').addEventListener('click',()=>window.location.href='tel:+18776571262');
 </script>
 </body>
 </html>
